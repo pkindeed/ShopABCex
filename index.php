@@ -41,7 +41,7 @@ if (!empty($_GET['vardas']) && !empty($_GET['pavardė']) && !empty($_GET['adresa
 $name = $_GET['vardas'];
 $surname = $_GET['pavardė'];
 $adress = $_GET['adresas'];
-echo $name', '$surname', '$adress';
+echo '$name', '$surname', '$adress';
 $sql = "INSERT INTO duomenys (vardas, pavarde, adresas) VALUES ('$name', '$surname', '$adress');";
 mysqli_query($conn, $sql);
 
