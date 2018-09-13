@@ -34,6 +34,12 @@ include_once 'includes/dbh.php';
 	<button type="submit" name="submit-search"></button>
 </form>
 
+	<select name="rikiavimas">
+	  <option value="varda">Vardą</option>
+	  <option value="pavarde">Pavardę</option>
+	  <option value="adresa">Adresą</option>
+	</select>
+
 
 
 
@@ -55,7 +61,7 @@ include_once 'includes/dbh.php';
 		$search = $_POST['search'];
 		};
 	
-		$sql = "SELECT * FROM duomenys ORDER BY vardas;";
+		$sql = "SELECT * FROM duomenys";
 		$results = mysqli_query($conn, $sql);
 		while ($row = mysqli_fetch_assoc($results)){
 			if (empty($search)){
