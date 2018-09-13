@@ -3,15 +3,6 @@
 	padding: 0;
 }
 
-.homepage {
-
-	background-image: url("adventure.jpg");
-	background-repeat: no-repeat;
-	background-size: 100%;
-}
-
-
-
 h1{
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -94,6 +85,13 @@ table, th, td{
 
 
 @media only screen and (min-width: 768px){
+	.homepage {
+
+	background-image: url("adventure.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
 	h1{
 	margin-top: 20px;
 	margin-bottom: 20px;
