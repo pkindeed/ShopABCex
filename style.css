@@ -9,7 +9,10 @@
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
-h1{
+
+
+@media only screen and (min-width: 768px){
+	h1{
 	margin-top: 20px;
 	margin-bottom: 20px;
 		font-family: 'Raleway', sans-serif;
@@ -86,4 +89,5 @@ th{
 }
 table, th, td{
 	border:1px solid #000;
+}
 }
