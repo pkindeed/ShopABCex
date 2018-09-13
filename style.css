@@ -51,7 +51,7 @@ body{
 }
 .wrapper{
 	margin: 0 auto 0 10px;
-	width: 1000px;
+	width: 100%;
 }
 .wrapper2{
 	width: 100%;
@@ -73,7 +73,7 @@ form{
 
 }
 table{
-	width: 400px;
+	width: 100%;
 }
 th{
 	text-align: left;
