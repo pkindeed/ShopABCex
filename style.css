@@ -80,6 +80,7 @@ form{
 .INFO {
 	width: 50%;
 	height: 40px;
+	padding-right: 5px;
 }
 table{
 	width: 400px;
@@ -159,8 +160,10 @@ form{
 	width: 1000px;
 }
 .INFO {
-	width: 100%;
+	width: 50%;
 	height: 40px;
+	padding-bottom: 10px
+
 }
 table{
 	width: 400px;
