@@ -35,9 +35,9 @@ include_once 'includes/dbh.php';
 </form>
 
 	<select name="rikiavimas">
-	  <option value="varda">Vardą</option>
-	  <option value="pavarde">Pavardę</option>
-	  <option value="adresa">Adresą</option>
+	  <option value="varda">Rikiuoti pagal vardą</option>
+	  <option value="pavarde">Rikiuoti pagal pavardę</option>
+	  <option value="adresa">Rikiuoti pagal adresą</option>
 	</select>
 
 
@@ -60,8 +60,23 @@ include_once 'includes/dbh.php';
 		if (isset($_POST['search'])){
 		$search = $_POST['search'];
 		};
-	
-		$sql = "SELECT * FROM duomenys";
+
+		
+		
+		if (isset($_POST['rikiavimas'])){
+		$rikiavimas = $_POST['rikiavimas'];
+		if (){$rikiavimas == "varda"){
+	$sql = "SELECT * FROM duomenys ORDER BY vardas";
+		}else if ($rikiavimas == "pavarde"){
+	$sql = "SELECT * FROM duomenys ORDER BY pavarde";
+		}else if  ($rikiavimas == "adresas"){
+	$sql = "SELECT * FROM duomenys ORDER BY adresas";
+		};
+
+
+
+
+	//	$sql = "SELECT * FROM duomenys";
 		$results = mysqli_query($conn, $sql);
 		while ($row = mysqli_fetch_assoc($results)){
 			if (empty($search)){
