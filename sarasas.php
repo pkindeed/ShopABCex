@@ -55,7 +55,7 @@ include_once 'includes/dbh.php';
 		$search = $_POST['search'];
 		};
 	
-		$sql = "SELECT * FROM duomenys;";
+		$sql = "SELECT * FROM duomenys ORDER BY vardas;";
 		$results = mysqli_query($conn, $sql);
 		while ($row = mysqli_fetch_assoc($results)){
 			if (empty($search)){
