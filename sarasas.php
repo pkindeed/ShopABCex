@@ -65,13 +65,8 @@ include_once 'includes/dbh.php';
 		
 		if (isset($_POST['rikiavimas'])){
 		$rikiavimas = $_POST['rikiavimas'];
-		if (){$rikiavimas == "varda"){
-	$sql = "SELECT * FROM duomenys ORDER BY vardas";
-		}else if ($rikiavimas == "pavarde"){
-	$sql = "SELECT * FROM duomenys ORDER BY pavarde";
-		}else if  ($rikiavimas == "adresas"){
-	$sql = "SELECT * FROM duomenys ORDER BY adresas";
-		};
+		echo $rikiavimas;
+		}
 
 
 
