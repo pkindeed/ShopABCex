@@ -31,13 +31,12 @@ include_once 'includes/dbh.php';
 
 <form method="POST" style="padding-bottom: 25px;">
 	<input type="text" name="search" placeholder="Ieškoti">
-	<input type="submit" name="submit-search" value="Ieškoti"></button>
 		<select name="rikiavimas">
 	  <option value="varda">Rikiuoti pagal vardą</option>
 	  <option value="pavarda">Rikiuoti pagal pavardę</option>
 	  <option value="adresa">Rikiuoti pagal adresą</option>
 	</select>
-	<input type="submit" name="submit-rikiavimas" value="Rikiuoti"></button>
+	<input type="submit" name="submit-rikiavimas" value="Pateikti"></button>
 
 </form>
 
@@ -79,6 +78,8 @@ include_once 'includes/dbh.php';
 		}else{
 			$sql = "SELECT * FROM duomenys";
 		}
+
+
 
 		
 		$results = mysqli_query($conn, $sql);
