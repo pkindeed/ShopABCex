@@ -66,7 +66,7 @@ include_once 'includes/dbh.php';
 		if (isset($_POST['rikiavimas'])){
 		$rikiavimas = $_POST['rikiavimas'];
 		echo "$rikiavimas";
-		}
+		};
 
 
 
