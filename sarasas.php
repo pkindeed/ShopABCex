@@ -34,7 +34,7 @@ include_once 'includes/dbh.php';
 	<button type="submit" name="submit-search"></button>
 </form>
 
-	<select name="rikiavimas">
+	<select method="POST" name="rikiavimas">
 	  <option value="varda">Rikiuoti pagal vardą</option>
 	  <option value="pavarde">Rikiuoti pagal pavardę</option>
 	  <option value="adresa">Rikiuoti pagal adresą</option>
