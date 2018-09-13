@@ -31,14 +31,16 @@ include_once 'includes/dbh.php';
 
 <form method="POST" style="padding-bottom: 25px;">
 	<input type="text" name="search" placeholder="Ieškoti">
-	<button type="submit" name="submit-search"></button>
-</form>
-
-	<select method="POST" name="rikiavimas">
+	<input type="submit" name="submit-search" value="Ieškoti"></button>
+		<select name="rikiavimas">
 	  <option value="varda">Rikiuoti pagal vardą</option>
-	  <option value="pavarde">Rikiuoti pagal pavardę</option>
+	  <option value="pavarda">Rikiuoti pagal pavardę</option>
 	  <option value="adresa">Rikiuoti pagal adresą</option>
 	</select>
+	<input type="submit" name="submit-rikiavimas" value="Rikiuoti"></button>
+
+</form>
+
 
 
 
@@ -61,11 +63,24 @@ include_once 'includes/dbh.php';
 		$search = $_POST['search'];
 		};
 
+		if (isset($_POST['rikiavimas'])){
+		$rikiavimas = $_POST['rikiavimas'];
+		echo $rikiavimas;
+		};
 		
 		
 
+		if (isset($rikiavimas) &&  $rikiavimas =='varda'){
+			$sql = "SELECT * FROM duomenys ORDER BY vardas";
+		}else if (isset($rikiavimas) &&  $rikiavimas =='pavarda'){
+			$sql = "SELECT * FROM duomenys ORDER BY pavarde";
+		}else if (isset($rikiavimas) &&  $rikiavimas =='adresa'){
+			$sql = "SELECT * FROM duomenys ORDER BY adresas";
+		}else{
+			$sql = "SELECT * FROM duomenys";
+		}
 
-		$sql = "SELECT * FROM duomenys";
+		
 		$results = mysqli_query($conn, $sql);
 		while ($row = mysqli_fetch_assoc($results)){
 			if (empty($search)){
