@@ -15,7 +15,7 @@
 h1{
 	margin-top: 10px;
 	margin-bottom: 10px;
-		font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
 	font-weight: 100;
 	text-decoration: none;
@@ -26,7 +26,7 @@ h1{
 h2{
 	margin-top: 20px;
 	margin-bottom: 20px;
-		font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
 	font-weight: 100;
 	text-decoration: none;
@@ -96,7 +96,7 @@ table, th, td{
 	h1{
 	margin-top: 20px;
 	margin-bottom: 20px;
-		font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 24px;
 	font-weight: 100;
 	text-decoration: none;
@@ -107,7 +107,7 @@ table, th, td{
 h2{
 	margin-top: 20px;
 	margin-bottom: 20px;
-		font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 18px;
 	font-weight: 100;
 	text-decoration: none;
@@ -145,7 +145,7 @@ body{
 }
 .wrapper2{
 	margin: 0 auto 0 80px;
-	width: 1000px;
+	width: 100%;
 	height: 100px;
 
 }
@@ -159,7 +159,7 @@ form{
 	width: 1000px;
 }
 .INFO {
-	width: 50%;
+	width: 100%;
 	height: 40px;
 }
 table{
