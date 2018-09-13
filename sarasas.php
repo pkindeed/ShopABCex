@@ -76,7 +76,7 @@ include_once 'includes/dbh.php';
 
 
 
-	//	$sql = "SELECT * FROM duomenys";
+		$sql = "SELECT * FROM duomenys";
 		$results = mysqli_query($conn, $sql);
 		while ($row = mysqli_fetch_assoc($results)){
 			if (empty($search)){
