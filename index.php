@@ -44,8 +44,7 @@ $surname = $_GET['pavardė'];
 $adress = $_GET['adresas'];
 $sql = "INSERT INTO duomenys (vardas, pavarde, adresas) VALUES ('$name', '$surname', '$adress');";
 mysqli_query($conn, $sql);
-echo "<script type='text/javascript'>alert('Sėkmingai užsisakėte prekę!')</script>"
-
+echo "<script type='text/javascript'>alert('Sėkmingai užsisakėte prekę');</script>";
 
 }
 ?>
