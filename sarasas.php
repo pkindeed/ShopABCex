@@ -29,7 +29,7 @@ include_once 'includes/dbh.php';
 
 
 
-<form method="POST" style="padding-bottom: 25px;">
+<form method="GET" style="padding-bottom: 25px;">
 	<input type="text" name="search" placeholder="Ieškoti">
 		<select name="rikiavimas">
 	  <option value="varda">Rikiuoti pagal vardą</option>
@@ -58,12 +58,12 @@ include_once 'includes/dbh.php';
     return strpos($haystack, $needle) !== false;
 }
 		
-		if (isset($_POST['search'])){
-		$search = $_POST['search'];
+		if (isset($_GET['search'])){
+		$search = $_GET['search'];
 		};
 
-		if (isset($_POST['rikiavimas'])){
-		$rikiavimas = $_POST['rikiavimas'];
+		if (isset($_GET['rikiavimas'])){
+		$rikiavimas = $_GET['rikiavimas'];
 		};
 
 		if ($page = isset($_GET['page'])){
@@ -83,8 +83,6 @@ include_once 'includes/dbh.php';
 			  <?php
 		}
 
-		
-
 		if (empty($page) || $page == 1){
 			$page = isset($_GET['page']);
 			$page1 = 0;
@@ -95,6 +93,8 @@ include_once 'includes/dbh.php';
 		}
 
 
+		//// Atrenka po 10 atitinkamame psl.
+if (empty($search)){
 	if (isset($rikiavimas) &&  $rikiavimas =='varda'){
 			$sql = "SELECT * FROM duomenys ORDER BY vardas LIMIT $page1, 10";
 		}else if (isset($rikiavimas) &&  $rikiavimas =='pavarda'){
@@ -104,31 +104,29 @@ include_once 'includes/dbh.php';
 		}else{
 			$sql = "SELECT * FROM duomenys LIMIT $page1, 10";
 		}
+	}else{
+		if (isset($rikiavimas) &&  $rikiavimas =='varda'){
+			$sql = "SELECT * FROM duomenys WHERE (vardas LIKE '$search' OR pavarde LIKE '$search' OR adresas LIKE '$search') ORDER BY vardas LIMIT $page1, 10";
+		}else if (isset($rikiavimas) &&  $rikiavimas =='pavarda'){
+			$sql = "SELECT * FROM duomenys WHERE (vardas LIKE '$search'OR pavarde LIKE '$search'OR adresas LIKE '$search')ORDER BY pavarde LIMIT $page1, 10";
+		}else if (isset($rikiavimas) &&  $rikiavimas =='adresa'){
+			$sql = "SELECT * FROM duomenys WHERE (vardas LIKE '$search'OR pavarde LIKE '$search'OR adresas LIKE '$search')ORDER BY adresas LIMIT $page1, 10";
+		}else{
+			$sql = "SELECT * FROM duomenys WHERE (vardas LIKE '$search'OR pavarde LIKE '$search'OR adresas LIKE '$search') LIMIT $page1, 10";
+		}
+	}
 
 
-		//////////
+		//// Parašo lentelėje tik tuos, kurie atitinka search.
 
 		$results = mysqli_query($conn, $sql);
 		
 		while ($row = mysqli_fetch_assoc($results)){
-			if (empty($search)){
 			echo "<tr>";
 			echo "<td>$row[vardas]</td>";
 			echo "<td>$row[pavarde]</td>";
 			echo "<td>$row[adresas]</td>";
 			echo "</tr>";
-
-			}else{
-			if (contains($search, $row['vardas'])== true || contains($search, $row['pavarde'])== true|| contains($search, $row['adresas'])== true){
-				echo "<tr>";
-			echo "<td>$row[vardas]</td>";
-			echo "<td>$row[pavarde]</td>";
-			echo "<td>$row[adresas]</td>";
-			echo "</tr>";
-			}
-			
-		}
-		
 	};
 
 		?>
