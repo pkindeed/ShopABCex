@@ -30,13 +30,13 @@ include_once 'includes/dbh.php';
 
 
 <form method="GET" style="padding-bottom: 25px;">
-	<input type="text" name="search" placeholder="Ieškoti">
+	<input type="text" name="search" placeholder="Ieškoti" value="<?php if(isset($_POST['rikiavimas'])){echo $_GET['rikiavimas'] ;} ?>">
 		<select name="rikiavimas">
 	  <option value="varda">Rikiuoti pagal vardą</option>
 	  <option value="pavarda">Rikiuoti pagal pavardę</option>
 	  <option value="adresa">Rikiuoti pagal adresą</option>
 	</select>
-	<input type="submit" name="submit-rikiavimas" value="Pateikti"></button>
+	<input type="submit" name="submit-rikiavimas" value="Pateikti" ></button>
 
 </form>
 
@@ -77,7 +77,20 @@ include_once 'includes/dbh.php';
 		$a = ceil($a)+1;
 
 		for ($b=1; $b<$a; $b++){
-			  ?><a href="sarasas.php?page=<?php echo $b;?>" style="text-decoration: none" method="_GET"><?php 
+			  ?><a 
+			  href="sarasas.php?page=<?php 
+			  echo $b; 
+			  if (!empty($rikiavimas)){
+			  	echo '&rikiavimas=';
+			  	echo $rikiavimas;
+			  }
+			  if (!empty($search)){
+			  	echo '&search=';
+			  	echo $search;
+			  }
+			  ?>" 
+
+			  style="text-decoration: none" method="_GET"><?php 
 			  	echo $b;
 			  	 ?> </a>  
 			  <?php
