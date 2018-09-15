@@ -45,7 +45,7 @@ include_once 'includes/dbh.php';
 
 <h3>Rezultatų skaičius: <?php  
 if (isset($_GET['search'])){
-		$search = $_GET['search'];
+		$search = htmlentities($_GET['search']);
 		};
 if (empty($search)){
 		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys"));
@@ -67,7 +67,7 @@ if(!empty($totalcount)){
 }
 		
 		if (isset($_GET['search'])){
-		$search = $_GET['search'];
+		$search = htmlentities($_GET['search']);
 		};
 
 		if (isset($_GET['rikiavimas'])){

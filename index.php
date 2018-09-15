@@ -42,9 +42,9 @@ include_once 'includes/dbh.php';
 
 <?php
 if (!empty($_GET['vardas']) && !empty($_GET['pavardė']) && !empty($_GET['adresas']) ){
-$name = $_GET['vardas'];
-$surname = $_GET['pavardė'];
-$adress = $_GET['adresas'];
+$name = mysqli_real_escape_string($conn, $_GET['vardas']);
+$surname = mysqli_real_escape_string($conn,$_GET['pavardė']);
+$adress = mysqli_real_escape_string($conn,$_GET['adresas']);
 $sql = "INSERT INTO duomenys (vardas, pavarde, adresas) VALUES ('$name', '$surname', '$adress');";
 mysqli_query($conn, $sql);
 echo "<script type='text/javascript'>alert('Sėkmingai užsakėte prekę!');</script>";
