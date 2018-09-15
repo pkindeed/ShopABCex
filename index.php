@@ -17,8 +17,9 @@ include_once 'includes/dbh.php';
 		<div class="wrapper">
 	<ul>
 	<li>
-		<a href="index.php">Prekių užsakymas</a>
-		<a href="sarasas.php">Užsakymų sąrašas</a>
+		<a  href="index.php">Prekių užsakymas</a>
+		&emsp;
+		<a  href="sarasas.php">Užsakymų sąrašas</a>
 	</li>
 </ul>
 </div>
@@ -33,7 +34,9 @@ include_once 'includes/dbh.php';
 	<input class="INFO"type="text" name="adresas" placeholder="Jūsų adresas">
 	
 <h2>Kai teisingai užpildysite langelius, paspauskite mygtuką ,,Pateikti".</h2>
-	<button type="submit" name="submit"	value="submit">Pateikti</button>
+	<div class="buttonpostion">
+	<button class="button" type="submit" name="submit"	value="submit">Pateikti</button>
+	</div>
 </form>
 </div>
 

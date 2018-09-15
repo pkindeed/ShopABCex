@@ -18,6 +18,7 @@ include_once 'includes/dbh.php';
 	<ul>
 	<li>
 		<a href="index.php">Prekių užsakymas</a>
+		&emsp;
 		<a href="sarasas.php">Užsakymų sąrašas</a>
 	</li>
 </ul>
@@ -56,19 +57,11 @@ if(!empty($totalcount)){
 }else{
 	echo "Nėra tokių rezultatų";
 }
-
-
-; ?> Rinktis puslapį:</h3>
-<table>
-	<tr>
-		<th>Vardas</th>
-		<th>Pavardė</th>
-		<th>Adresas</th>
-		
-
-		<?php
-
-		function contains($needle, $haystack)
+?>
+             
+&emsp; Rinktis puslapį:
+<?php  
+	function contains($needle, $haystack)
 {
     return strpos($haystack, $needle) !== false;
 }
@@ -147,6 +140,18 @@ if (empty($search)){
 		}
 	}
 
+
+; ?> </h3>
+<table>
+	<tr>
+		<th>Vardas</th>
+		<th>Pavardė</th>
+		<th>Adresas</th>
+		
+
+		<?php
+
+	
 
 		//// Parašo lentelėje tik tuos, kurie atitinka search.
 
