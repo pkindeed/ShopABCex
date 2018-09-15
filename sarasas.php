@@ -65,30 +65,33 @@ include_once 'includes/dbh.php';
 		if (isset($_POST['rikiavimas'])){
 		$rikiavimas = $_POST['rikiavimas'];
 		};
+
+		if ($page = isset($_GET['page'])){
+			$page = $_GET['page'];
+		};
 		
 		//// Patikrina, kiek išvis reikia puslapių ir juos pavaizduoja
 
 		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys"));
 		$a = $totalcount/10;
-		$a = ceil($a);
+		$a = ceil($a)+1;
 
 		for ($b=1; $b<$a; $b++){
-			  ?><a href="sarasas.php?page=<?php echo $b;?>" style="text-decoration: none"><?php 
+			  ?><a href="sarasas.php?page=<?php echo $b;?>" style="text-decoration: none" method="_GET"><?php 
 			  	echo $b;
 			  	 ?> </a>  
 			  <?php
 		}
 
+		
 
-		$page = isset($_GET['page']);
-		echo $page;
 		if (empty($page) || $page == 1){
 			$page = isset($_GET['page']);
 			$page1 = 0;
-			echo $page;
+	
 		}else{
 			$page1=($page*10)-10;
-			echo $page;
+
 		}
 
 
