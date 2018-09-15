@@ -72,7 +72,12 @@ include_once 'includes/dbh.php';
 		
 		//// Patikrina, kiek išvis reikia puslapių ir juos pavaizduoja
 
+
+		if (empty($search)){
 		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys"));
+		}else{
+		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys WHERE (vardas LIKE '$search' OR pavarde LIKE '$search' OR adresas LIKE '$search')"));
+		}
 		$a = $totalcount/10;
 		$a = ceil($a)+1;
 
