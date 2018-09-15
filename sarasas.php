@@ -42,8 +42,23 @@ include_once 'includes/dbh.php';
 
 
 
+<h3>Rezultatų skaičius: <?php  
+if (isset($_GET['search'])){
+		$search = $_GET['search'];
+		};
+if (empty($search)){
+		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys"));
+		}else{
+		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys WHERE (vardas LIKE '$search' OR pavarde LIKE '$search' OR adresas LIKE '$search')"));
+		}
+if(!empty($totalcount)){
+	echo $totalcount;
+}else{
+	echo "Nėra tokių rezultatų";
+}
 
 
+; ?> Rinktis puslapį:</h3>
 <table>
 	<tr>
 		<th>Vardas</th>
@@ -70,8 +85,7 @@ include_once 'includes/dbh.php';
 			$page = $_GET['page'];
 		};
 		
-		//// Patikrina, kiek išvis reikia puslapių ir juos pavaizduoja
-
+		//// Patikrina, kiek išvis reikia puslapių ir juos pavaizduoja, isimena ka jau rinkosi klientas.
 
 		if (empty($search)){
 		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys"));
@@ -109,7 +123,6 @@ include_once 'includes/dbh.php';
 			$page1=($page*10)-10;
 
 		}
-
 
 		//// Atrenka po 10 atitinkamame psl.
 if (empty($search)){
