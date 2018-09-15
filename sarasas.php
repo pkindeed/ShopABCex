@@ -83,7 +83,7 @@ if(!empty($totalcount)){
 		if (empty($search)){
 		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys"));
 		}else{
-		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys WHERE (vardas LIKE '$search' OR pavarde LIKE '$search' OR adresas LIKE '$search')"));
+		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys WHERE (vardas LIKE '%$search%' OR pavarde LIKE '%$search%' OR adresas LIKE '%$search%')"));
 		}
 		$a = $totalcount/10;
 		$a = ceil($a)+1;
@@ -130,13 +130,13 @@ if (empty($search)){
 		}
 	}else{
 		if (isset($rikiavimas) &&  $rikiavimas =='varda'){
-			$sql = "SELECT * FROM duomenys WHERE (vardas LIKE '$search' OR pavarde LIKE '$search' OR adresas LIKE '$search') ORDER BY vardas LIMIT $page1, 10";
+			$sql = "SELECT * FROM duomenys WHERE (vardas LIKE '%$search%' OR pavarde LIKE '%$search%' OR adresas LIKE '%$search%') ORDER BY vardas LIMIT $page1, 10";
 		}else if (isset($rikiavimas) &&  $rikiavimas =='pavarda'){
-			$sql = "SELECT * FROM duomenys WHERE (vardas LIKE '$search'OR pavarde LIKE '$search'OR adresas LIKE '$search')ORDER BY pavarde LIMIT $page1, 10";
+			$sql = "SELECT * FROM duomenys WHERE (vardas LIKE '%$search%' OR pavarde LIKE '%$search%' OR adresas LIKE '%$search%')ORDER BY pavarde LIMIT $page1, 10";
 		}else if (isset($rikiavimas) &&  $rikiavimas =='adresa'){
-			$sql = "SELECT * FROM duomenys WHERE (vardas LIKE '$search'OR pavarde LIKE '$search'OR adresas LIKE '$search')ORDER BY adresas LIMIT $page1, 10";
+			$sql = "SELECT * FROM duomenys WHERE (vardas LIKE '%$search%' OR pavarde LIKE '%$search%' OR adresas LIKE '%$search%')ORDER BY adresas LIMIT $page1, 10";
 		}else{
-			$sql = "SELECT * FROM duomenys WHERE (vardas LIKE '$search'OR pavarde LIKE '$search'OR adresas LIKE '$search') LIMIT $page1, 10";
+			$sql = "SELECT * FROM duomenys WHERE (vardas LIKE '%$search%' OR pavarde LIKE '%$search%' OR adresas LIKE '%$search%') LIMIT $page1, 10";
 		}
 	}
 
