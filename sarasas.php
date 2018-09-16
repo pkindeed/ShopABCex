@@ -184,11 +184,7 @@ if (empty($search)){
 		}else{
 		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys WHERE (vardas LIKE '%$search%' OR pavarde LIKE '%$search%' OR adresas LIKE '%$search%')"));
 		}
-if(!empty($totalcount)){
-	echo $totalcount;
-}else{
-	echo "Nėra tokių rezultatų";
-}
+
 		$a = $totalcount/10;
 		$a = ceil($a)+1;
 				if($page!=$a-1){echo $page+1;} else{
