@@ -77,7 +77,7 @@ if(!empty($totalcount)){
 		if ($page = isset($_GET['page'])){
 			$page = $_GET['page'];
 		}else{
-			<a href="<php echo #$page=1 ?>">;
+			<a href="<php echo #$page=1 ?>"><a>;
 		};
 		
 		//// Patikrina, kiek išvis reikia puslapių ir juos pavaizduoja, isimena ka jau rinkosi klientas.
