@@ -179,7 +179,7 @@ if (empty($search)){
 				$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys"));
 				$a = $totalcount/10;
 				$a = ceil($a)+1;
-				if($page!=$a){echo $page+1;} else{
+				if($page!=$a-1){echo $page+1;} else{
 					echo $page;
 				}
 				if (!empty($rikiavimas)){
