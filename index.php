@@ -19,7 +19,7 @@ include_once 'includes/dbh.php';
 	<li>
 		<a  href="index.php">Prekių užsakymas</a>
 		&emsp;
-		<a  href="sarasas.php">Užsakymų sąrašas</a>
+		<a  href="sarasas.php?page=1">Užsakymų sąrašas</a>
 	</li>
 </ul>
 </div>
