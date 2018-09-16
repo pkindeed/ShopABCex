@@ -87,24 +87,39 @@ if(!empty($totalcount)){
 		}
 		$a = $totalcount/10;
 		$a = ceil($a)+1;
-
+ 		$xxx=1;
 		for ($b=1; $b<$a; $b++){
 			  ?><a 
 			  href="sarasas.php?page=<?php 
 			  echo $b; 
 			  if (!empty($rikiavimas)){
 			  	echo '&rikiavimas=';
-			  	echo $rikiavimas;
+			  	echo htmlentities($rikiavimas);
 			  }
 			  if (!empty($search)){
 			  	echo '&search=';
-			  	echo $search;
+			  	echo htmlentities($search);
 			  }
 			  ?>" 
 
 			  style="text-decoration: none" method="_GET"><?php 
-			  	echo $b;
+			 
+			 ///sutvarko kad paginge butu per viduri ... kai per daug entries
+					if ($b==1 || $b==2){
+			  		echo $b;
+			  		}else if ($b == $page||$b == $page-1||$b == $page+1 ){
+					echo $b;
+			  		}else if ($b==$a-1){
+			  		echo $b;
+			  		}else if ($xxx==1){
+			  			echo "...";
+			  			$xxx=2;
+			  		}
+
+			  		
 			  	 ?> </a>  
+
+
 			  <?php
 		}
 
