@@ -87,7 +87,8 @@ if(!empty($totalcount)){
 		}
 		$a = $totalcount/10;
 		$a = ceil($a)+1;
- 		$xxx=1;
+ 		$xxx=0;
+ 		$yyy=0;
 		for ($b=1; $b<$a; $b++){
 			  ?><a 
 			  href="sarasas.php?page=<?php 
@@ -104,16 +105,19 @@ if(!empty($totalcount)){
 
 			  style="text-decoration: none" method="_GET"><?php 
 			 
-			 ///sutvarko kad paginge butu per viduri ... kai per daug entries
+			 ///sutvarko kad paginge butu per viduri ... is abieju pusiu kai per daug entries
 					if ($b==1 || $b==2){
 			  		echo $b;
 			  		}else if ($b == $page||$b == $page-1||$b == $page+1 ){
 					echo $b;
 			  		}else if ($b==$a-1){
 			  		echo $b;
-			  		}else if ($xxx==1){
+			  		}else if ($xxx<1&& $b <$page){
 			  			echo "...";
-			  			$xxx=2;
+			  			$xxx++;
+			  		}else if ($yyy<1&& $b >$page){
+			  			echo "...";
+			  			$yyy++;
 			  		}
 
 			  		
