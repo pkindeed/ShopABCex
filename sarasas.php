@@ -176,9 +176,19 @@ if (empty($search)){
 			  	echo htmlentities($search);
 			  }?>'"></button>
 <input  type="button" name="add-pagenumber" value=">" onClick="window.location.href='https://shopabcfun.herokuapp.com/sarasas.php?page=<?php 
-				$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys"));
-				$a = $totalcount/10;
-				$a = ceil($a)+1;
+				if (isset($_GET['search'])){
+		$search = htmlentities($_GET['search']);
+		};
+if (empty($search)){
+		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys"));
+		}else{
+		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys WHERE (vardas LIKE '%$search%' OR pavarde LIKE '%$search%' OR adresas LIKE '%$search%')"));
+		}
+if(!empty($totalcount)){
+	echo $totalcount;
+}else{
+	echo "Nėra tokių rezultatų";
+}
 				if($page!=$a-1){echo $page+1;} else{
 					echo $page;
 				}
