@@ -31,7 +31,8 @@ include_once 'includes/dbh.php';
 
 
 <form method="GET" style="padding-bottom: 25px;">
-	<input type="text" name="search" placeholder="Ieškoti" value="<?php echo "page=1";if(isset($_POST['rikiavimas'])){echo $_GET['rikiavimas'] ;} ?>">
+	<input type="text" name="search" placeholder="Ieškoti" onclick="window.location.href='https://shopabcfun.herokuapp.com/sarasas.php?page=1">value="<?php 
+	if(isset($_POST['rikiavimas'])){echo $_GET['rikiavimas'] ;} ?>">
 		<select name="rikiavimas">
 	  <option value="varda">Rikiuoti pagal vardą</option>
 	  <option value="pavarda">Rikiuoti pagal pavardę</option>
