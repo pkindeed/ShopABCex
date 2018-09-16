@@ -164,7 +164,9 @@ if (empty($search)){
 <form method="_GET">
 <input  type="button" name="minus-pagenumber" value="<" onClick="window.location.href='https://shopabcfun.herokuapp.com/sarasas.php?page=<?php 
 				
-				if($page>1){echo $page-1;}  
+				if($page>1){echo $page-1;}else{
+					echo $page;
+				}  
 				if (!empty($rikiavimas)){
 			  	echo '&rikiavimas=';
 			  	echo htmlentities($rikiavimas);
@@ -177,7 +179,9 @@ if (empty($search)){
 				$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys"));
 				$a = $totalcount/10;
 				$a = ceil($a)+1;
-				if($page!=$a){echo $page+1;} 
+				if($page!=$a){echo $page+1;} else{
+					echo $page;
+				}
 				if (!empty($rikiavimas)){
 			  	echo '&rikiavimas=';
 			  	echo htmlentities($rikiavimas);
