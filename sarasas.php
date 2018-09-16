@@ -162,7 +162,7 @@ if (empty($search)){
 
 ; ?> 
 <form method="_GET">
-<input  type="button" name="minus-pagenumber" value="<" onClick="window.location.href='https://shopabcfun.herokuapp.com/sarasas.php?page=<?php echo $page-1 ?>'"></button>
+<input  type="button" name="minus-pagenumber" value="<" onClick="window.location.href='https://shopabcfun.herokuapp.com/sarasas.php?page=<?php if(true){echo $page-1} ?>'"></button>
 <input  type="button" name="add-pagenumber" value=">" onClick="window.location.href='https://shopabcfun.herokuapp.com/sarasas.php?page=<?php echo $page+1 ?>'"></button></form></h3>
 
 
