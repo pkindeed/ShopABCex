@@ -76,7 +76,8 @@ if(!empty($totalcount)){
 
 		if ($page = isset($_GET['page'])){
 			$page = $_GET['page'];
-		};
+		}else{
+			$page = 1;
 		
 		//// Patikrina, kiek išvis reikia puslapių ir juos pavaizduoja, isimena ka jau rinkosi klientas.
 
