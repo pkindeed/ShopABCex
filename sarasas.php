@@ -174,7 +174,7 @@ if (empty($search)){
 			  	echo htmlentities($search);
 			  }?>'"></button>
 <input  type="button" name="add-pagenumber" value=">" onClick="window.location.href='https://shopabcfun.herokuapp.com/sarasas.php?page=<?php 
-				if($page!=$a){echo $page+1;} 
+				if($page!=$a-1){echo $page+1;} 
 				if (!empty($rikiavimas)){
 			  	echo '&rikiavimas=';
 			  	echo htmlentities($rikiavimas);
