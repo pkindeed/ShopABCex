@@ -187,7 +187,7 @@ if (empty($search)){
 
 		$a = $totalcount/10;
 		$a = ceil($a)+1;
-				if($page==1||$page<($a-1)){echo $page+1;} else{
+				if(($page==1&&$a>1)||$page<($a-1)){echo $page+1;} else{
 					echo $page;
 				}
 				if (!empty($rikiavimas)){
