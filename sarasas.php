@@ -76,8 +76,6 @@ if(!empty($totalcount)){
 
 		if ($page = isset($_GET['page'])){
 			$page = $_GET['page'];
-		}else{
-			<a href="<php echo #$page=1 ?>"><a>;
 		};
 		
 		//// Patikrina, kiek išvis reikia puslapių ir juos pavaizduoja, isimena ka jau rinkosi klientas.
@@ -164,8 +162,8 @@ if (empty($search)){
 
 ; ?> 
 <form method="_GET">
-<input  type="button" name="minus-pagenumber" value="<" onClick="window.location.href='https://shopabcfun.herokuapp.com/sarasas.php?page=<?php if ($page!=$a){echo $page++;}; ?>'"></button>
-<input  type="button" name="add-pagenumber" value=">" onClick="window.location.href='https://shopabcfun.herokuapp.com/sarasas.php?page=<?php if ($page!=1){echo $page-1;}; ?>'"></button></form></h3>
+<input  type="button" name="minus-pagenumber" value="<" onClick="window.location.href='https://shopabcfun.herokuapp.com/sarasas.php?page=<?php echo $page++; ?>'"></button>
+<input  type="button" name="add-pagenumber" value=">" onClick="window.location.href='https://shopabcfun.herokuapp.com/sarasas.php?page=<?php echo $page-1; ?>'"></button></form></h3>
 
 
 
