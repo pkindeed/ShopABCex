@@ -38,7 +38,16 @@ include_once 'includes/dbh.php';
 	  <option value="pavarda">Rikiuoti pagal pavardę</option>
 	  <option value="adresa">Rikiuoti pagal adresą</option>
 	</select>
-	<input type="submit" name="submit-rikiavimas" value="Pateikti" ></button>
+	<input type="submit" name="submit-rikiavimas" value="Pateikti" onclick="window.location.href='https://shopabcfun.herokuapp.com/sarasas.php?page=<?php 
+					echo 1;
+				if (!empty($rikiavimas)){
+			  	echo '&rikiavimas=';
+			  	echo htmlentities($rikiavimas);
+			  }
+			  if (!empty($search)){
+			  	echo '&search=';
+			  	echo htmlentities($search);
+			  }?>'" ></button>
 
 </form>
 
