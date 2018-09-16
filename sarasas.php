@@ -189,6 +189,8 @@ if(!empty($totalcount)){
 }else{
 	echo "Nėra tokių rezultatų";
 }
+		$a = $totalcount/10;
+		$a = ceil($a)+1;
 				if($page!=$a-1){echo $page+1;} else{
 					echo $page;
 				}
