@@ -179,7 +179,7 @@ if (empty($search)){
 				if (isset($_GET['search'])){
 		$search = htmlentities($_GET['search']);
 		};
-if (empty($search)){
+				if (empty($search)){
 		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys"));
 		}else{
 		$totalcount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM duomenys WHERE (vardas LIKE '%$search%' OR pavarde LIKE '%$search%' OR adresas LIKE '%$search%')"));
@@ -187,7 +187,7 @@ if (empty($search)){
 
 		$a = $totalcount/10;
 		$a = ceil($a)+1;
-				if(is_null($page)||$page<($a-1)){echo $page+1;} else{
+				if($page==1||$page<($a-1)){echo $page+1;} else{
 					echo $page;
 				}
 				if (!empty($rikiavimas)){
