@@ -32,7 +32,7 @@ include_once 'includes/dbh.php';
 
 <form method="GET" style="padding-bottom: 25px;">
 	<input type="text" name="search" placeholder="Ieškoti" value="<?php 
-	if(isset($_POST['rikiavimas'])){echo $_GET['rikiavimas'] ;} $_GET['page'] = '1'; ?>" >
+	if(isset($_POST['rikiavimas'])){echo $_GET['rikiavimas'] ;} if(empty($_GET['page'])){$_GET['page'] = '1';} ?>" >
 		<select name="rikiavimas">
 	  <option value="varda">Rikiuoti pagal vardą</option>
 	  <option value="pavarda">Rikiuoti pagal pavardę</option>
