@@ -59,7 +59,7 @@ if(!empty($totalcount)){
 	echo "Nėra tokių rezultatų";
 }
 ?>
-             
+&emsp; Dabar rodomas puslapis:   <?php $page?>      
 &emsp; Rinktis puslapį:
 <?php  
 	function contains($needle, $haystack)
