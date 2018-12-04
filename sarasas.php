@@ -16,11 +16,11 @@ include_once 'includes/dbh.php';
 	<nav>
 		<div class="wrapper">
 	<ul>
-	<img src="solution.png" width="280" height="125" title="Logo" alt="Logo" />
 	<li>
 		<a href="index.php">Prekių užsakymas</a>
 		&emsp;
 		<a href="sarasas.php?page=1">Užsakymų sąrašas</a>
+		<img class= "right" src="solution.png" width="90" height="90" title="Logo" alt="Logo" />
 	</li>
 </ul>
 </div>
