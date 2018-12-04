@@ -2,6 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
+.right {
+	align-self: flex-end;
+}
 .button {
     background-color: #555555; /* Green */
     border: none;
@@ -125,8 +128,7 @@ table, th, td{
 @media only screen and (min-width: 768px){
 	.homepage {
 
-	background-image: url("adventure.jpg");
-	background-repeat: no-repeat;
+	background-color: azure;
 	background-size: 100%;
 }
 .buttonpostion{
