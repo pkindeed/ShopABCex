@@ -20,6 +20,7 @@ include_once 'includes/dbh.php';
 		<a  href="index.php">Prekių užsakymas</a>
 		&emsp;
 		<a  href="sarasas.php?page=1">Užsakymų sąrašas</a>
+		<img src="solution.png" width="90" height="90" title="Logo" alt="Logo" align="right" />
 	</li>
 </ul>
 </div>
