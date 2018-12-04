@@ -16,6 +16,7 @@ include_once 'includes/dbh.php';
 	<nav>
 		<div class="wrapper">
 	<ul>
+	<img src="/solution.png" width="280" height="125" title="Logo" alt="Logo" />
 	<li>
 		<a href="index.php">Prekių užsakymas</a>
 		&emsp;
