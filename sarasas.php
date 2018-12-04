@@ -26,7 +26,7 @@ include_once 'includes/dbh.php';
 
 </nav>
 <div class="wrapper2">
-<h2>Norėdami ieškoti užsakymo, įveskite vardą, pavardę arba adresą į šią eilutę:</h2>
+<h2>Norėdami ieškoti užsakymo, įveskite vardą, pavardę arba adresą:</h2>
 
 
 
