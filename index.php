@@ -11,7 +11,7 @@ include_once 'includes/dbh.php';
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
 	<link rel="stylesheet" href="style.css">
 </head>
-<body class="homepage">
+<body>
 	
 	<nav>
 		<div class="wrapper">
