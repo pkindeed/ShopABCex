@@ -3,7 +3,7 @@
 	padding: 0;
 }
 .right {
-	align-self: flex-end;
+	float: right;
 }
 .button {
     background-color: #555555; /* Green */
