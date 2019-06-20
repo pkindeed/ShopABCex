@@ -27,6 +27,7 @@ include_once 'includes/dbh.php';
 
 </nav>
 <h1 style="">Mūsų produktas - pats geriausias!</h1>
+<div class="wrapper">	
 <div class="wrapper2">
 <h2>Norėdami užsakyti produktą, įveskite savo duomenis:</h2>
 <form  method="_GET">
@@ -39,6 +40,7 @@ include_once 'includes/dbh.php';
 	<button class="button" type="submit" name="submit"	value="submit">Pateikti</button>
 	</div>
 </form>
+</div>
 </div>
 
 <?php

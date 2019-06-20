@@ -27,22 +27,6 @@ include_once 'includes/dbh.php';
 </nav>
 <div class="wrapper2">
 <h2>Norėdami ieškoti užsakymo, įveskite vardą, pavardę arba adresą:</h2>
-
-
-<form method="GET" style="padding-bottom: 25px;">
-	<input type="text" name="search" placeholder="Ieškoti" value="<?php 
-	if(isset($_POST['rikiavimas'])){echo $_GET['rikiavimas'] ;} if(empty($_GET['page'])){$_GET['page'] = '1';} ?>" >
-		<select name="rikiavimas">
-	  <option value="varda">Rikiuoti pagal vardą</option>
-	  <option value="pavarda">Rikiuoti pagal pavardę</option>
-	  <option value="adresa">Rikiuoti pagal adresą</option>
-	</select>
-	<input type="submit" name="submit-rikiavimas" value="Pateikti" ></button>
-
-</form>
-
-
-
 <h3>Rezultatų skaičius: <?php  
 if (isset($_GET['search'])){
 		$search = htmlentities($_GET['search']);
@@ -161,6 +145,7 @@ if (empty($search)){
 
 
 ; ?> 
+<div class="wrapper2">
 <form method="_GET">
 <input  type="button" name="minus-pagenumber" value="<" onClick="window.location.href='https://shopabcfun.herokuapp.com/sarasas.php?page=<?php 
 				
@@ -198,8 +183,19 @@ if (empty($search)){
 			  	echo '&search=';
 			  	echo htmlentities($search);
 			  } ?>'"></button></form></h3>
-
-
+			  </div>
+<div class="wrapper2">
+<form method="GET" style="padding-bottom: 25px">
+	<input type="text" name="search" placeholder="Ieškoti" value="<?php 
+	if(isset($_POST['rikiavimas'])){echo $_GET['rikiavimas'] ;} if(empty($_GET['page'])){$_GET['page'] = '1';} ?>" >
+		<select name="rikiavimas">
+	  <option value="varda">Rikiuoti pagal vardą</option>
+	  <option value="pavarda">Rikiuoti pagal pavardę</option>
+	  <option value="adresa">Rikiuoti pagal adresą</option>
+	</select>
+	<input type="submit" name="submit-rikiavimas" value="Pateikti" ></button>
+</form>
+			</div>
 
 <table>
 	<tr>
